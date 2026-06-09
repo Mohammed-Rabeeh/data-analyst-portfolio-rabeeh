@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-900: #1e3a8a;
+}
+
+/* Custom styles and utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Solid Panel/Card styles for fully solid white or black themes */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.dark .glass-panel {
+  background: #000000;
+  border: 1px solid #1e293b;
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.02);
+}
+
+.dark .glass-card {
+  background: #000000;
+  border: 1px solid #1e293b;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  background: #f8fafc;
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px 0 rgba(59, 130, 246, 0.08);
+}
+
+.dark .glass-card-hover:hover {
+  transform: translateY(-2px);
+  background: #111111;
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px 0 rgba(59, 130, 246, 0.2);
+}
+
+.glass-pill {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
+.dark .glass-pill {
+  background: #111111;
+  border: 1px solid #334155;
+}
+
+/* Scroll progress indicator style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Stylized scroll thumb */
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Print Overrides */
+@media print {
+  /* Hide every element on the page */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Make only the resume modal overlay and its children visible */
+  #resume-modal-overlay,
+  #resume-modal-overlay * {
+    visibility: visible;
+  }
+  
+  /* Reset overlay styling for a clean page print */
+  #resume-modal-overlay {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Format resume sheet container to occupy the full page width and height */
+  #resume-modal-content {
+    border: none !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+  
+  /* Hide the print/save control header completely */
+  .print\:hidden {
+    display: none !important;
+  }
+}
+
