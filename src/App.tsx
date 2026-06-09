@@ -16,11 +16,11 @@ export default function App() {
     // Initializer checked themes
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark") return true;
       if (savedTheme === "light") return false;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark") return true;
+      return false; // Default to light theme
     }
-    return false;
+    return false; // Default to light theme
   });
 
   const [isLoading, setIsLoading] = useState(true);
@@ -182,7 +182,7 @@ export default function App() {
           >
             
             {/* Horizontal Header Nav Bar */}
-            <header className="fixed top-0 left-0 w-full z-40 bg-white dark:bg-black border-b border-slate-250 dark:border-neutral-900 transition-colors duration-300">
+            <header className="fixed top-0 left-0 w-full z-40 bg-white dark:bg-black border-b border-slate-200 dark:border-neutral-900 transition-colors duration-300">
               <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
                 
                 {/* Identity logo */}
@@ -207,7 +207,7 @@ export default function App() {
                           <button
                             id={`nav-${item.id}`}
                             onClick={() => setIsResumeOpen(true)}
-                            className="px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide cursor-pointer transition-all duration-200 text-slate-650 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5"
+                            className="px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide cursor-pointer transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5"
                           >
                             {item.label}
                           </button>
@@ -218,7 +218,7 @@ export default function App() {
                             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide cursor-pointer transition-all duration-200
                               ${activeSection === item.id
                                 ? "bg-blue-600/20 text-blue-600 dark:text-blue-400 border border-blue-500/20 dark:border-blue-500/30"
-                                : "text-slate-650 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5"
+                                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5"
                               }`}
                           >
                             {item.label}
@@ -270,7 +270,7 @@ export default function App() {
                                 setMobileMenuOpen(false);
                                 setIsResumeOpen(true);
                               }}
-                              className="w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-250 cursor-pointer text-slate-650 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/5"
+                              className="w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-250 cursor-pointer text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/5"
                             >
                               {item.label}
                             </button>
@@ -281,7 +281,7 @@ export default function App() {
                               className={`w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-200 cursor-pointer
                                 ${activeSection === item.id
                                   ? "bg-blue-600/20 text-blue-600 dark:text-blue-400 border border-blue-500/20"
-                                  : "text-slate-650 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/5"
+                                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/5"
                                 }`}
                             >
                               {item.label}

@@ -118,7 +118,7 @@ export default function Skills() {
                   {cat.items.map((skill, skillIdx) => (
                     <div key={skillIdx} className="space-y-2">
                       <div className="flex justify-between items-center text-xs sm:text-sm">
-                        <span className="font-medium text-slate-705 dark:text-slate-300">
+                        <span className="font-medium text-slate-700 dark:text-slate-300">
                           {skill.name}
                         </span>
                         <span className="font-mono font-semibold text-blue-600 dark:text-blue-500">

@@ -72,10 +72,10 @@ export default function AboutMe() {
               <h4 className="text-xl font-bold text-slate-900 dark:text-white font-display">
                 Professional Journey
               </h4>
-              <p className="text-slate-650 dark:text-slate-400 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                 As a passionate and motivated Bachelor of Computer Application (BCA) Graduate, I am excited to kickstart my career as a Fresher Data Analyst. I thrive at the critical intersection of technical databases, programming frameworks, and business logic, translating complex datasets into actionable insights.
               </p>
-              <p className="text-slate-655 dark:text-slate-400 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                 I specialize in querying relational databases under SQL, scripting analysis routines in Python, and building clean BI dashboards. By combining computer application theory with data mining practices, I aim to enable continuous operational improvement.
               </p>
             </motion.div>
@@ -90,7 +90,7 @@ export default function AboutMe() {
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-300 font-mono flex items-center gap-2 mb-2">
                 <Briefcase className="w-4.5 h-4.5 text-blue-500" /> CAREER GOALS
               </h4>
-              <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 My immediate goal is to secure an entry-level position as an Associate Data Analyst where I can deploy my database systems knowledge and business intelligence training to deliver clear, business-focused insights and optimize key operational metrics.
               </p>
             </motion.div>
@@ -103,7 +103,7 @@ export default function AboutMe() {
               <h4 className="text-xl font-bold text-slate-900 dark:text-white font-display flex items-center gap-2">
                 <GraduationCap className="w-5.5 h-5.5 text-blue-500" /> Educational Background
               </h4>
-              <div className="relative border-l-2 border-slate-205 dark:border-white/10 ml-3.5 pl-5.5 space-y-6">
+              <div className="relative border-l-2 border-slate-200 dark:border-white/10 ml-3.5 pl-5.5 space-y-6">
                 {education.map((edu, i) => (
                   <motion.div
                     key={i}
@@ -124,7 +124,7 @@ export default function AboutMe() {
                     <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                       {edu.institution}
                     </p>
-                    <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-400/90 mt-1.5 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400/90 mt-1.5 leading-relaxed">
                       {edu.description}
                     </p>
                   </motion.div>
@@ -154,7 +154,7 @@ export default function AboutMe() {
                       <h5 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                         {str.title}
                       </h5>
-                      <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-400 mt-0.5 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">
                         {str.desc}
                       </p>
                     </div>

@@ -117,7 +117,7 @@ export default function Experience() {
               </div>
 
               {/* Bullet Accomplishments */}
-              <ul className="space-y-3.5 pl-5 list-disc text-slate-650 dark:text-slate-400 leading-relaxed font-sans text-xs sm:text-sm">
+              <ul className="space-y-3.5 pl-5 list-disc text-slate-600 dark:text-slate-400 leading-relaxed font-sans text-xs sm:text-sm">
                 {exp.bullets.map((bullet, bulletIdx) => (
                   <li key={bulletIdx} className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                     {bullet}

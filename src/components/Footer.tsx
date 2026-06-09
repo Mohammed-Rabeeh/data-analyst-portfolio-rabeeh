@@ -28,7 +28,7 @@ export default function Footer({ onBackToTop, onLinkClick, onViewResumeClick }: 
             <h4 className="text-lg font-bold text-slate-900 dark:text-white font-display">
               Mohammed Rabeeh T
             </h4>
-            <p className="text-xs text-slate-550 dark:text-slate-400 font-mono">
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
               DATA ANALYST
             </p>
           </div>
