@@ -9,7 +9,6 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
-import ResumeModal from "./components/ResumeModal";
 
 export default function App() {
   const [isDark, setIsDark] = useState<boolean>(() => {
@@ -28,7 +27,6 @@ export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   const [loadingProgress, setLoadingProgress] = useState(0);
 
@@ -204,13 +202,15 @@ export default function App() {
                     {navItems.map(item => (
                       <li key={item.id}>
                         {item.id === "resume" ? (
-                          <button
+                          <a
                             id={`nav-${item.id}`}
-                            onClick={() => setIsResumeOpen(true)}
-                            className="px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide cursor-pointer transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5"
+                            href="https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide cursor-pointer transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5 flex items-center"
                           >
                             {item.label}
-                          </button>
+                          </a>
                         ) : (
                           <button
                             id={`nav-${item.id}`}
@@ -264,16 +264,16 @@ export default function App() {
                       {navItems.map(item => (
                         <li key={item.id}>
                           {item.id === "resume" ? (
-                            <button
+                            <a
                               id={`mobile-nav-${item.id}`}
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsResumeOpen(true);
-                              }}
-                              className="w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-250 cursor-pointer text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/5"
+                              href="https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-250 cursor-pointer text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/5"
                             >
                               {item.label}
-                            </button>
+                            </a>
                           ) : (
                             <button
                               id={`mobile-nav-${item.id}`}
@@ -299,7 +299,7 @@ export default function App() {
             <main className="relative bg-white dark:bg-black">
               <Hero 
                 onContactClick={() => scrollToSection("contact")} 
-                onViewResumeClick={() => setIsResumeOpen(true)}
+                onViewResumeClick={() => window.open("https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing", "_blank")}
               />
               <AboutMe />
               <Skills />
@@ -311,15 +311,8 @@ export default function App() {
             <Footer 
               onBackToTop={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
               onLinkClick={scrollToSection} 
-              onViewResumeClick={() => setIsResumeOpen(true)}
+              onViewResumeClick={() => window.open("https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing", "_blank")}
             />
-
-            {/* Resume Interactive Modal Viewer */}
-            <AnimatePresence>
-              {isResumeOpen && (
-                <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
-              )}
-            </AnimatePresence>
 
             {/* Fixed Back To Top Trigger Button standard micro implementation */}
             <AnimatePresence>
