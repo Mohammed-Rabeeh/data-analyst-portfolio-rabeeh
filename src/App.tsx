@@ -204,7 +204,7 @@ export default function App() {
                         {item.id === "resume" ? (
                           <a
                             id={`nav-${item.id}`}
-                            href="https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1CQxmyrovQtsO7AqHjaWONVkKNU1btWvA/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide cursor-pointer transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-white/5 flex items-center"
@@ -266,7 +266,7 @@ export default function App() {
                           {item.id === "resume" ? (
                             <a
                               id={`mobile-nav-${item.id}`}
-                              href="https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing"
+                              href="https://drive.google.com/file/d/1CQxmyrovQtsO7AqHjaWONVkKNU1btWvA/view?usp=sharing"
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={() => setMobileMenuOpen(false)}
@@ -299,7 +299,7 @@ export default function App() {
             <main className="relative bg-white dark:bg-black">
               <Hero 
                 onContactClick={() => scrollToSection("contact")} 
-                onViewResumeClick={() => window.open("https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing", "_blank")}
+                onViewResumeClick={() => window.open("https://drive.google.com/file/d/1CQxmyrovQtsO7AqHjaWONVkKNU1btWvA/view?usp=sharing", "_blank")}
               />
               <AboutMe />
               <Skills />
@@ -311,7 +311,7 @@ export default function App() {
             <Footer 
               onBackToTop={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
               onLinkClick={scrollToSection} 
-              onViewResumeClick={() => window.open("https://drive.google.com/file/d/1e_r9QKCeyKZ4zD0EU13keW--9fode87E/view?usp=sharing", "_blank")}
+              onViewResumeClick={() => window.open("https://drive.google.com/file/d/1CQxmyrovQtsO7AqHjaWONVkKNU1btWvA/view?usp=sharing", "_blank")}
             />
 
             {/* Fixed Back To Top Trigger Button standard micro implementation */}
