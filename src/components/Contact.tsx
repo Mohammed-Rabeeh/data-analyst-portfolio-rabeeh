@@ -186,7 +186,7 @@ export default function Contact() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="e.g. Marie Curie"
+                        placeholder="Enter Your Name"
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-950/10 dark:border-white/10 bg-white/40 dark:bg-white/5 text-slate-800 dark:text-slate-200 text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500/55 dark:focus:ring-blue-500/40 transition-all font-sans"
                         disabled={status === "loading"}
                       />
@@ -203,7 +203,7 @@ export default function Contact() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="e.g. marie.curie@example.com"
+                        placeholder="Enter Your Email"
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-950/10 dark:border-white/10 bg-white/40 dark:bg-white/5 text-slate-800 dark:text-slate-200 text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500/55 dark:focus:ring-blue-500/40 transition-all font-sans"
                         disabled={status === "loading"}
                       />
