@@ -11,7 +11,7 @@ export default function ThemeToggle({ isDark, toggleTheme }: ThemeToggleProps) {
     <button
       id="theme-toggle-btn"
       onClick={toggleTheme}
-      className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 hover:shadow-md cursor-pointer transition-all duration-300 group focus:outline-hidden"
+      className="p-2.5 rounded-xl border border-theme-border bg-theme-sec-bg hover:shadow-md cursor-pointer transition-all duration-300 group focus:outline-hidden"
       aria-label="Toggle structural dark theme"
     >
       <div className="relative w-5 h-5 overflow-hidden flex items-center justify-center">
