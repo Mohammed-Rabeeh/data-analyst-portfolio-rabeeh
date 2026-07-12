@@ -294,6 +294,7 @@ body {
   .glow-pulse-subtle,
   .chip-float,
   .gradient-shift,
+  .social-button-premium,
   .skill-shimmer::before {
     animation: none !important;
     transform: none !important;

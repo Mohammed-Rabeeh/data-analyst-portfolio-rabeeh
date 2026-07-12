@@ -161,16 +161,35 @@ export default function Hero({ onContactClick, onViewProjectsClick, onViewResume
 
           {/* Social Channels Row */}
           <div
-            className="rise-in rise-6 flex items-center justify-center gap-6 pt-4 text-theme-muted"
+            className="rise-in rise-6 flex items-center justify-center gap-6 pt-6"
           >
-            <a id="hero-social-linkedin" href="https://www.linkedin.com/in/mohammed-rabeeh-t-404141415" target="_blank" rel="noopener noreferrer" className="hover:text-theme-primary transition-colors duration-200" title="LinkedIn">
-              <Linkedin className="w-5.5 h-5.5" />
+            <a
+              id="hero-social-linkedin"
+              href="https://www.linkedin.com/in/mohammed-rabeeh-t-404141415"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-button-premium group flex items-center justify-center w-12 h-12 rounded-xl border border-theme-primary/15 bg-theme-primary/5 dark:border-theme-primary/25 text-theme-primary/90 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-theme-primary/10 dark:hover:bg-theme-primary/20 hover:-translate-y-[2px] hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] active:bg-theme-primary/20 dark:active:bg-theme-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg transition-all duration-[250ms] ease-out cursor-pointer"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-[22px] h-[22px] transition-colors duration-[250ms]" strokeWidth={2} />
             </a>
-            <a id="hero-social-github" href="https://github.com/Mohammed-Rabeeh" target="_blank" rel="noopener noreferrer" className="hover:text-theme-fg transition-colors duration-200" title="GitHub">
-              <Github className="w-5.5 h-5.5" />
+            <a
+              id="hero-social-github"
+              href="https://github.com/Mohammed-Rabeeh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-button-premium group flex items-center justify-center w-12 h-12 rounded-xl border border-theme-primary/15 bg-theme-primary/5 dark:border-theme-primary/25 text-theme-primary/90 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-theme-primary/10 dark:hover:bg-theme-primary/20 hover:-translate-y-[2px] hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] active:bg-theme-primary/20 dark:active:bg-theme-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg transition-all duration-[250ms] ease-out cursor-pointer"
+              title="GitHub"
+            >
+              <Github className="w-[22px] h-[22px] transition-colors duration-[250ms]" strokeWidth={2} />
             </a>
-            <a id="hero-social-email" href="mailto:rabeehmuhammed911@gmail.com" className="hover:text-theme-primary transition-colors duration-200" title="Email">
-              <Mail className="w-5.5 h-5.5" />
+            <a
+              id="hero-social-email"
+              href="mailto:rabeehmuhammed911@gmail.com"
+              className="social-button-premium group flex items-center justify-center w-12 h-12 rounded-xl border border-theme-primary/15 bg-theme-primary/5 dark:border-theme-primary/25 text-theme-primary/90 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-theme-primary/10 dark:hover:bg-theme-primary/20 hover:-translate-y-[2px] hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] active:bg-theme-primary/20 dark:active:bg-theme-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg transition-all duration-[250ms] ease-out cursor-pointer"
+              title="Email"
+            >
+              <Mail className="w-[22px] h-[22px] transition-colors duration-[250ms]" strokeWidth={2} />
             </a>
           </div>
         </div>
