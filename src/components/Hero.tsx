@@ -82,7 +82,7 @@ export default function Hero({ onContactClick, onViewProjectsClick, onViewResume
             <h2
               className="rise-in rise-4 text-xl sm:text-2xl font-semibold text-theme-muted font-display"
             >
-              Aspiring Data Analyst
+              Data Analyst
             </h2>
 
             {/* Staggered entrance 4b: Key Tech Skills Line */}

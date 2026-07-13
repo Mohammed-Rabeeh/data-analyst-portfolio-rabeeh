@@ -1,4 +1,4 @@
-import { BookOpen, Target, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
+import { BookOpen, Target, Lightbulb, GraduationCap, Briefcase, Landmark, MapPin, Calendar } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function AboutMe() {
@@ -23,9 +23,11 @@ export default function AboutMe() {
   const education = [
     {
       degree: "Bachelor of Computer Application",
-      institution: "Safi Institute of Advanced Study , University of Calicut",
-      period: "2023 - 2026",
-      description: "Focused on programming paradigms, database design, software development cycles, and advanced analytics workflows."
+      college: "Safi Institute of Advanced Study",
+      university: "University of Calicut",
+      location: "Kerala, India",
+      period: "2023 – 2026",
+      description: "Focused on programming paradigms, database design, software development, and data analytics workflows."
     }
   ];
 
@@ -111,20 +113,55 @@ export default function AboutMe() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="relative group"
+                    className="relative group flex flex-col gap-4 pb-4"
                   >
-                    {/* Ring Indicator */}
-                    <span className="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-theme-bg border-2 border-theme-primary group-hover:scale-125 transition-transform duration-200 shadow-md shadow-theme-primary/20"></span>
-                    <span className="text-xs font-mono font-bold text-theme-primary font-semibold tracking-wide">
-                      {edu.period}
-                    </span>
-                    <h5 className="text-base font-bold text-theme-fg mt-0.5">
+                    {/* Ring Indicator (Timeline Node) */}
+                    <span className="absolute -left-[30px] top-[6px] w-4 h-4 rounded-full bg-theme-bg border-2 border-theme-primary group-hover:scale-125 transition-transform duration-200 shadow-md shadow-theme-primary/20"></span>
+
+                    {/* 🎓 Bachelor's Degree (small premium badge) */}
+                    <div className="flex select-none">
+                      <div
+                        style={{ backgroundColor: '#111827', backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.06), rgba(59, 130, 246, 0.06))', borderColor: 'rgba(59, 130, 246, 0.25)' }}
+                        className="inline-flex items-center gap-1.5 h-[28px] px-2.5 rounded-[10px] border text-[11.5px] font-medium text-blue-400 motion-safe:hover:-translate-y-[1px] hover:text-blue-300 hover:border-blue-500/40 hover:shadow-[0_0_8px_rgba(59,130,246,0.25)] transition-all duration-[250ms] ease-out motion-reduce:transition-none motion-reduce:transform-none cursor-default"
+                      >
+                        <GraduationCap className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                        <span className="text-blue-200/90">Bachelor's Degree</span>
+                      </div>
+                    </div>
+
+                    {/* Bachelor of Computer Application */}
+                    <h5 className="text-xl sm:text-2xl font-bold text-theme-fg leading-tight tracking-tight">
                       {edu.degree}
                     </h5>
-                    <p className="text-xs font-semibold text-theme-muted">
-                      {edu.institution}
-                    </p>
-                    <p className="text-xs sm:text-sm text-theme-muted mt-1.5 leading-relaxed">
+
+                    {/* Safi Institute of Advanced Study / University of Calicut */}
+                    <div className="flex flex-col gap-1">
+                      <p className="text-[15px] sm:text-base font-semibold text-theme-fg/95 dark:text-slate-100">
+                        {edu.college}
+                      </p>
+                      <p className="text-xs sm:text-sm font-medium text-slate-400">
+                        {edu.university}
+                      </p>
+                    </div>
+
+                    {/* 📍 Kerala, India • 📅 2023–2026 */}
+                    <div className="flex flex-wrap items-center gap-2 text-xs sm:text-[13px] text-slate-400 font-medium select-none">
+                      <div className="flex items-center gap-1.5">
+                        <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                        <span>{edu.location}</span>
+                      </div>
+                      <span className="text-slate-600 dark:text-slate-700 mx-1">•</span>
+                      <div className="flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                        <span>{edu.period}</span>
+                      </div>
+                    </div>
+
+                    {/* Focused on... */}
+                    <p 
+                      style={{ lineHeight: 1.8 }}
+                      className="text-xs sm:text-[14px] text-theme-muted mt-0.5 max-w-[650px] w-full text-left"
+                    >
                       {edu.description}
                     </p>
                   </motion.div>
