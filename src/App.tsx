@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
@@ -79,6 +80,7 @@ export default function App() {
         "about",
         "skills",
         "experience",
+        "certifications",
         "contact"
       ];
 
@@ -213,6 +215,7 @@ export default function App() {
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
+    { id: "certifications", label: "Certifications" },
     { id: "contact", label: "Contact" },
     { id: "resume", label: "Resume" }
   ];
@@ -423,6 +426,7 @@ export default function App() {
               <AboutMe />
               <Skills />
               <Experience />
+              <Certifications />
               <Contact />
             </main>
 
