@@ -1,4 +1,5 @@
-import { ArrowRight, Download, Mail, Linkedin, Github, Database, LayoutDashboard, BarChart3, LineChart, Terminal, Table, Layers } from "lucide-react";
+import { ArrowRight, Download, Mail, Linkedin, Github, Database, LayoutDashboard, BarChart3, LineChart, Terminal, Table, Layers, GraduationCap, FolderKanban, BadgeCheck } from "lucide-react";
+import { motion } from "motion/react";
 
 interface HeroProps {
   onContactClick: () => void;
@@ -6,19 +7,51 @@ interface HeroProps {
   onViewResumeClick: () => void;
 }
 
+// Animation variants for premium enterprise stats stagger load
+const statsContainerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1], // Custom premium ease-out (cubic-bezier)
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const statCardVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
 export default function Hero({ onContactClick, onViewProjectsClick, onViewResumeClick }: HeroProps) {
   const stats = [
-    { value: "BCA", label: "Graduate", suffix: "", isText: true },
-    { value: "Fresher", label: "Experience Level", suffix: "", isText: true },
-    { value: 8, label: "Projects Completed", suffix: "+", isText: false },
-    { value: 95, label: "Accuracy Rate", suffix: "%", isText: false },
+    { icon: GraduationCap, title: "BCA Graduate" },
+    { icon: BarChart3, title: "Data Analyst" },
+    { icon: FolderKanban, title: "2 Projects" },
+    { icon: BadgeCheck, title: "Certification" },
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen py-24 px-4 flex flex-col justify-center overflow-hidden bg-theme-bg transition-colors duration-300">
+    <section id="hero" className="relative min-h-screen py-24 px-4 flex flex-col justify-center overflow-hidden bg-theme-bg dark:bg-[#020617] transition-colors duration-300">
       
       {/* Dynamic Grid Background decoration with gradientShift */}
       <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.04] dark:opacity-[0.07] pointer-events-none"></div>
+
+      {/* Layered gradients for deep premium depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/50 to-[#020617] pointer-events-none dark:block hidden"></div>
+      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none dark:block hidden blur-3xl"></div>
+      <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none dark:block hidden blur-3xl"></div>
 
       <div className="max-w-4xl mx-auto w-full flex flex-col items-center justify-center text-center relative z-10">
         <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-3xl">
@@ -195,26 +228,53 @@ export default function Hero({ onContactClick, onViewProjectsClick, onViewResume
         </div>
       </div>
 
-      {/* Hero Stats Section - Uses IntersectionObserver scroll reveal and count-up */}
-      <div className="max-w-6xl mx-auto w-full mt-20 relative z-10 reveal">
-        <div
-          className="skill-shimmer grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-2xl bg-theme-sec-bg/50 border border-theme-border glass-panel shadow-sm"
+      {/* Hero Stats Section - Premium unified enterprise analytics panel */}
+      <div className="max-w-6xl mx-auto w-full mt-16 relative z-10 px-4">
+        {/* Subtle blue radial glow behind the card */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.12)_0%,transparent_70%)] pointer-events-none -translate-y-4 blur-2xl z-0" />
+
+        <motion.div
+          variants={statsContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="relative z-10 w-full rounded-[28px] border border-[rgba(96,165,250,0.18)] bg-gradient-to-br from-[#17233D]/90 to-[#1E2B49]/90 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_25px_60px_rgba(0,0,0,0.4),0_0_50px_rgba(96,165,250,0.12)] overflow-x-auto md:overflow-x-visible scrollbar-none transform-gpu"
         >
-          {stats.map((stat, i) => (
-            <div key={i} className="text-center p-4 border-r border-theme-border/50 last:border-r-0 relative z-10">
-              <span className="block text-3xl md:text-4xl font-extrabold text-theme-primary font-display">
-                {stat.isText ? (
-                  <span>{stat.value}</span>
-                ) : (
-                  <span data-count={stat.value} data-suffix={stat.suffix}>0</span>
-                )}
-              </span>
-              <span className="block text-xs md:text-sm font-medium text-theme-muted mt-1 font-sans">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
+          <div className="grid grid-cols-4 w-full min-w-[768px] md:min-w-0">
+            {stats.map((stat, i) => {
+              const Icon = stat.icon;
+              
+              // Divider borders using rgba(255,255,255,0.05) - border-white/5
+              const borderClasses = i < 3 ? "border-r border-[rgba(255,255,255,0.05)]" : "";
+
+              return (
+                <motion.div
+                  key={i}
+                  variants={statCardVariants}
+                  className={`group relative flex flex-col items-center justify-center text-center py-14 px-10 bg-transparent transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-[4px] hover:shadow-[0_20px_45px_rgba(96,165,250,0.18)] cursor-default select-none overflow-hidden min-h-[160px] md:min-h-[180px] border-[rgba(255,255,255,0.05)] ${borderClasses} transform-gpu`}
+                >
+                  {/* Soft subtle blue radial glow on hover */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.14)_0%,transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  
+                  {/* Content wrapper for smooth slight lift hover animation */}
+                  <div className="flex flex-col items-center justify-center transition-all duration-300 ease-out">
+                    {/* Icon with #60A5FA, soft outer glow, slightly larger visual weight */}
+                    <div className="mb-6 text-[#60A5FA] shrink-0 relative flex items-center justify-center">
+                      {/* Ambient glow effect behind icon */}
+                      <div className="absolute w-8 h-8 rounded-full bg-[#60A5FA]/10 blur-md opacity-40 group-hover:opacity-85 transition-opacity duration-300" />
+                      <Icon className="w-9 h-9 relative z-10 filter drop-shadow-[0_0_12px_rgba(96,165,250,0.35)] group-hover:filter group-hover:drop-shadow-[0_0_15px_rgba(96,165,250,0.6)] transition-all duration-300" strokeWidth={1.8} />
+                    </div>
+
+                    {/* Title with font-bold, text-xl, White text (#F8FAFC), balanced spacing, transition on hover to #60A5FA */}
+                    <h4 className="text-xl font-bold text-[#F8FAFC] group-hover:text-[#60A5FA] font-display tracking-wide leading-tight transition-colors duration-300 px-1 md:px-2 w-full break-words">
+                      {stat.title}
+                    </h4>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

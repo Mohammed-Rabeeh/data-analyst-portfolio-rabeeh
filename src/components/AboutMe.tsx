@@ -121,11 +121,10 @@ export default function AboutMe() {
                     {/* 🎓 Bachelor's Degree (small premium badge) */}
                     <div className="flex select-none">
                       <div
-                        style={{ backgroundColor: '#111827', backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.06), rgba(59, 130, 246, 0.06))', borderColor: 'rgba(59, 130, 246, 0.25)' }}
-                        className="inline-flex items-center gap-1.5 h-[28px] px-2.5 rounded-[10px] border text-[11.5px] font-medium text-blue-400 motion-safe:hover:-translate-y-[1px] hover:text-blue-300 hover:border-blue-500/40 hover:shadow-[0_0_8px_rgba(59,130,246,0.25)] transition-all duration-[250ms] ease-out motion-reduce:transition-none motion-reduce:transform-none cursor-default"
+                        className="inline-flex items-center gap-1.5 h-[28px] px-2.5 rounded-[10px] border border-theme-primary/20 bg-theme-primary/5 text-[11.5px] font-medium text-theme-primary motion-safe:hover:-translate-y-[1px] hover:border-theme-primary/40 hover:shadow-[0_0_8px_rgba(59,130,246,0.25)] transition-all duration-[250ms] ease-out motion-reduce:transition-none motion-reduce:transform-none cursor-default"
                       >
-                        <GraduationCap className="w-3.5 h-3.5 text-blue-500 shrink-0" />
-                        <span className="text-blue-200/90">Bachelor's Degree</span>
+                        <GraduationCap className="w-3.5 h-3.5 text-theme-primary shrink-0" />
+                        <span className="text-theme-primary/90 font-semibold">Bachelor's Degree</span>
                       </div>
                     </div>
 
